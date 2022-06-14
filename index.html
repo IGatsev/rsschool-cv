@@ -1,1 +1,125 @@
 <!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="This is my CV">
+	<title>CV Gatsev Igor</title>
+	<link rel="stylesheet" href="./styles/style.css">
+	<link rel="icon" type="image/png" href="./images/favicons/download.png">
+</head>
+
+<body>
+	<div class="header">
+		<img class="rouned_logo" src="./images/images.jpg" alt="Мое фото">
+		<h1>CV - Gatsev Igor</h1>
+	</div>
+
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#about_me">About Me</a></li>
+				<li><a href="#contacts">Contacts</a></li>
+				<li><a href="#skills">Skills</a></li>
+				<li><a href="#code">Code</a></li>
+				<li><a href="#project">Project</a></li>
+				<li><a href="#education">Education</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<div class="container">
+			<section id="about_me">
+				<h2>About Me</h2>
+				<span>I work as a developer in a company, the technology stack is different. Mobile development, Back
+					End development in Java, C#. Front End using DevExpress, html, css end etc...</span>
+			</section>
+			<section id="contacts">
+				<h2>Contacts</h2>
+				<span>Contacts where you can contact me</span>
+				<ul>
+					<li><a href="tel:++966555555">Tel: +996 555 555</a></li>
+					<li><a href="skype:titusman5?call">Skype Call Me</a></li>
+					<li><a href="mailto:vespansian@gmail.com">Gmail</a></li>
+				</ul>
+			</section>
+			<section id="skills">
+				<h2>Skills</h2>
+				<span>Below is a small list of technologies with which I had to work.</span>
+				<p>Java, С#, Spring Boot, Andtoid, HTML, JS, CSS</p>
+			</section>
+			<section id="code">
+				<h2>Example Code</h2>
+				<span> An example of a code that sends data from an HTML page, using the POST method, to the server, the
+					button is blocked and, if the response is successful, we show a success message, otherwise we show
+					an error</span>
+				<code><pre>
+sendSms(){
+  var phone = $('#signerPhone').val();
+  if (phone == ''){
+	  alert('Введите телефон');
+	  return;
+  }
+  $.ajax({
+	  url: "signers/sendsms",
+	  type: "POST",
+	  datatype: "json",
+	  contentType: "application/json",
+	  data: JSON.stringify({
+		  signerId: $('#signerId').val(),
+		  signerPhone: '+996' + phone,
+	  }),
+	  success: function(data, textStatus, jqXHR) {
+		  if (data.success) {
+			  showSuccessMsg('смс выслано');
+			  $('#butSave').removeAttr("disabled");
+		  }else{
+			  showFailureMsg(data.message);
+		  }
+	  },
+	  error: function(jqXHR, textStatus, errorThrown) {
+		  showFailureMsg("StatusText = " + textStatus +
+		   "\n" + "StatusCode = " + jqXHR.status + "\n" +
+		    "errorThrown = " + errorThrown.message);
+	  }
+  });
+	  
+		  </pre> </code>
+			</section>
+			<section id="project">
+				<h2>Project</h2>
+				<span>Middle Developer:</span>
+				<ul>
+					<li>Development of payment APIs</li>
+					<li><a href="https://play.google.com/store/search?q=megakassa&c=apps" target="_blank">Mobile application development</a></li>
+				</ul>
+			</section>
+			<section id="education">
+				<h2>Education</h2>
+				<ul>
+					<li>Some university courses</li>
+					<li>English - Pre-Intermediate</li>
+				</ul>
+			</section>
+		</div>
+	</main>
+
+	<footer>
+		<div class="link_rs">
+			<a href="https://rs.school/js/">
+				<img src="./images/content/rs_school_js.svg" width="64" height="64" alt="Logo RS">
+			</a>
+		</div>
+		<div class="date">&#9400; Gatsev Igor - 2022</div>
+		<div class="github">
+			<a href="https://github.com/IGatsev" target="_blank">
+				<img src="./images/content/25231.png" width="64" height="64" alt="Logo GitHub">
+			</a>
+		</div>
+	</footer>
+</body>
+
+</html>
