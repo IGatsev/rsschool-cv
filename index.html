@@ -56,38 +56,38 @@
 				<span> An example of a code that sends data from an HTML page, using the POST method, to the server, the
 					button is blocked and, if the response is successful, we show a success message, otherwise we show
 					an error</span>
-				<code><pre>
-sendSms(){
-  var phone = $('#signerPhone').val();
-  if (phone == ''){
-	  alert('Введите телефон');
-	  return;
-  }
-  $.ajax({
-	  url: "signers/sendsms",
-	  type: "POST",
-	  datatype: "json",
-	  contentType: "application/json",
-	  data: JSON.stringify({
-		  signerId: $('#signerId').val(),
-		  signerPhone: '+996' + phone,
-	  }),
-	  success: function(data, textStatus, jqXHR) {
-		  if (data.success) {
-			  showSuccessMsg('смс выслано');
-			  $('#butSave').removeAttr("disabled");
-		  }else{
-			  showFailureMsg(data.message);
-		  }
-	  },
-	  error: function(jqXHR, textStatus, errorThrown) {
-		  showFailureMsg("StatusText = " + textStatus +
-		   "\n" + "StatusCode = " + jqXHR.status + "\n" +
-		    "errorThrown = " + errorThrown.message);
-	  }
-  });
+				<code>
+sendSms(){<br>
+  var phone = $('#signerPhone').val();<br>
+  if (phone == ''){<br>
+	  alert('Введите телефон');<br>
+	  return;<br>
+  }<br>
+  $.ajax({<br>
+	  url: "signers/sendsms",<br>
+	  type: "POST",<br>
+	  datatype: "json",<br>
+	  contentType: "application/json",<br>
+	  data: JSON.stringify({<br>
+		  signerId: $('#signerId').val(),<br>
+		  signerPhone: '+996' + phone,<br>
+	  }),<br>
+	  success: function(data, textStatus, jqXHR) {<br>
+		  if (data.success) {<br>
+			  showSuccessMsg('смс выслано');<br>
+			  $('#butSave').removeAttr("disabled");<br>
+		  }else{<br>
+			  showFailureMsg(data.message);<br>
+		  }<br>
+	  },<br>
+	  error: function(jqXHR, textStatus, errorThrown) {<br>
+		  showFailureMsg("StatusText = " + textStatus +<br>
+		   "\n" + "StatusCode = " + jqXHR.status + "\n" +<br>
+		    "errorThrown = " + errorThrown.message);<br>
+	  }<br>
+  });<br>
 	  
-		  </pre> </code>
+		 </code>
 			</section>
 			<section id="project">
 				<h2>Project</h2>
